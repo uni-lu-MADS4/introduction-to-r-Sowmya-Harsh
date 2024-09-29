@@ -1,7 +1,7 @@
 ---
 title: "Getting started with R"
-author: Your name here
-date: today
+author: Sowmya Janmahanthi
+date: 23/09/2024
 format: html
 ---
 
@@ -10,50 +10,51 @@ format: html
 * Create a vector of the letters A, B and C.
 
 ```{r}
-# Your answer in code
-
+c("A","B","C")
 ```
 > Your answer as text
-
+[1] "A" "B" "C"
 
 
 * Assign the vector to a variable `my_letters`
 ```{r}
-# Your answer in code
-
+my_letters <- c("A","B","C")
+my_letters
 ```
 
 
 * Check the what happens when you run `letters` (just this) on the command line.
 ```{r}
-# Your answer in code
+letters
 
 ```
 
 > Your answer as text
-
+[1] "a" "b" "c" "d" "e" "f" "g" "h"
+ [9] "i" "j" "k" "l" "m" "n" "o" "p"
+[17] "q" "r" "s" "t" "u" "v" "w" "x"
+[25] "y" "z"
 
 
 * What happens when you concatenate two vectors? Add `c(my_letters , my_letters)`
 ```{r}
-# Your answer in code
+c(my_letters,my_letters)
 
 
 ```
 
 > Your answer as text
-
-
+[1] "A" "B" "C" "A" "B" "C"
+The vector repeats/adding itself.
 
 * Add the number 1 to letters. What happens to the type of the vector?
 ```{r}
-# Your answer in code
-
+letters+1
 
 ```
 
 > Your answer as text
-
+Error in letters + 1 : non-numeric argument to binary operator
 
 
 ### Exercise 2
@@ -64,11 +65,10 @@ format: html
 3. Add the vector containing 1, 2, 3, 4 to `my_vec`. What do you observe?
 
 ```{r}
-# Your answer in code
-
-
-
-
+my_vec <- 1:8
+my_vec
+my_vec+2
+my_vec+c(1,2,3,4)
 
 ```
 
@@ -94,25 +94,30 @@ format: html
 7. Compute the transpose of `A`
 
 ```{r}
-# Your answer in code
-
-
-
-
-
+matrix <- matrix(c(4,9,10,1,5,7), nrow = 3)
+A <- matrix
+A
+dim(A)
+A[2,2]
+A <- cbind(A,c(0,0,0))
+A
+A[1,1] <- 0
+A
+t(A)
 
 ```
 
 
+
 8. Are any values in `A` larger than 10? 
 ```{r}
-# Your answer in code
+any(A>10)
 
 ```
 
 9. Are all values in `A` smaller than 10?
 ```{r}
-# Your answer in code
+all(A<10)
 
 ```
 
@@ -122,10 +127,10 @@ format: html
 
 ```{r}
 # Your answer in code
-
-
-
-
+sum_function <- function(a,b){return(as.numeric(a) + as.numeric(b))
+}
+sum_function(2,12)
+sum_function("H","i")
 
 ```
 
@@ -136,9 +141,9 @@ format: html
 
 ```{r}
 # Your answer in code
-
-
-
+newfunction <- function(x){list(mean=mean(x),median=median(x),sd=sd(x))
+}
+newfunction(c(22,33,44))
 ```
 
 
@@ -147,10 +152,9 @@ format: html
 The output of `c('1' , "a", NA, "2", NA)` should be 2.
 
 ```{r}
-# Your answer in code
-
-
-
+vector1 <- c('1' , "a", NA, "2", NA)
+count_na <- sum(is.na(vector1))
+count_na
 ```
 
 
